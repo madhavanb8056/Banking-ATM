@@ -40,27 +40,28 @@ public class BankingService {
 		sc.nextLine();
 		String name = sc.nextLine();
 		user.setName(name);
-		
 		Long acctNo = randomNumbers();
 		user.setAccountNumber(acctNo);
-		System.out.println("Enter Your New PIN Number");
-		int pin = sc.nextInt();
-		user.setPinNumber(pin);
 		System.out.println("Enter Your Address");
-		sc.nextLine();
+		
+		
 		String address = sc.nextLine();
 		user.setAddress(address);
 		System.out.println("Enter Your Phone Number");
 		long phn = sc.nextLong();
 		user.setPhoneNumber(phn);
+		System.out.println("Enter Your New PIN Number");
+		int pin = sc.nextInt();
+		user.setPinNumber(pin);
 		System.out.println("Enter Your Opening Balance Amount");
+		
 		long balance = sc.nextLong();
 		user.setBalance(balance);
 		userStorage.add(user);
 		System.out.println("Hellow "+user.getName()+" Your Account Created Successful");
 		System.out.println("Your Account Details");
 		System.out.println("Name: "+user.getName());
-		System.out.println("Account Number: "+ user.getAccountNumber());
+		System.out.println("Unique Account Number: "+ user.getAccountNumber());
 		System.out.println("PIN Number: "+ user.getPinNumber());
 		System.out.println("Address: "+user.getAddress());
 		System.out.println("Phone Number: "+user.getPhoneNumber());
@@ -140,7 +141,7 @@ public class BankingService {
 				homePage(user);
 			}
 		} else if (option == 2) {
-			System.out.println("Enter Your Deposti Amount");
+			System.out.println("Enter Your Deposit Amount");
 			long deposit = sc.nextLong();
 			System.out.println("RS " + deposit + " is Deposited Successful");
 			Long balance = deposit + user.getBalance();
